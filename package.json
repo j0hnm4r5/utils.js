@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "A collection of Javascript utility functions",
   "author": "John Mars <john@M4R5.io> (http://M4R5.io)",
+  "repository": "github:j0hnm4r5/utils.js",
   "main": "utils.js",
   "license": "MIT"
 }
