@@ -6,3 +6,4 @@
 
 export * from "./libs/Numbers";
 export * from "./libs/Noise";
+export * from "./libs/Colors";
