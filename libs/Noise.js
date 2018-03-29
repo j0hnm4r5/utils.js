@@ -1,19 +1,8 @@
 /**
- * A speed-improved perlin and simplex noise algorithms for 2D and 3D.
+ * A perlin and simplex noise algorithm class for 2D and 3D
  *
- * Based on example code by Stefan Gustavson (stegu@itn.liu.se).
- * Optimisations by Peter Eastman (peastman@drizzle.stanford.edu).
- * Better rank ordering method by Stefan Gustavson in 2012.
- * Converted to Javascript by Joseph Gentle, at https://github.com/josephg/noisejs.
- * Ported to ES6 by John Mars.
- *
- * Version 2012-03-09
- *
- * This code was placed in the public domain by its original author,
- * Stefan Gustavson.
- *
+ * @see {@link https://github.com/josephg/noisejs}
  */
-
 export class Noise {
 	constructor() {
 		this.grad3 = [
@@ -303,6 +292,11 @@ export class Noise {
 		this.seed(Math.random());
 	}
 
+	/**
+	 * Reseed the noise
+	 *
+	 * @param {number} seed - The seed from which the noise is generated
+	 */
 	seed(seed) {
 		if (seed > 0 && seed < 1) {
 			// Scale the seed out
@@ -335,6 +329,14 @@ export class Noise {
 		return (1 - t) * a + t * b;
 	}
 
+	/**
+	 * Generate 2D Simplex Noise
+	 *
+	 * @param {*} xin - The X value
+	 * @param {*} yin - The Y value
+	 *
+	 * @returns {number} A noisy number from [-1...1]
+	 */
 	simplex2(xin, yin) {
 		var n0, n1, n2; // Noise contributions from the three corners
 
@@ -410,6 +412,15 @@ export class Noise {
 		return 70 * (n0 + n1 + n2);
 	}
 
+	/**
+	 * Generate 3D Simplex Noise
+	 *
+	 * @param {*} xin - The X value
+	 * @param {*} yin - The Y value
+	 * @param {*} zin - The Z value
+	 *
+	 * @returns {number} A noisy number from [-1...1]
+	 */
 	simplex3(xin, yin, zin) {
 		var n0, n1, n2, n3; // Noise contributions from the four corners
 
@@ -545,6 +556,14 @@ export class Noise {
 		return 32 * (n0 + n1 + n2 + n3);
 	}
 
+	/**
+	 * Generate 2D Perlin Noise
+	 *
+	 * @param {*} x - The X value
+	 * @param {*} y - The Y value
+	 *
+	 * @returns {number} A noisy number from [-1...1]
+	 */
 	perlin2(x, y) {
 		// Find unit grid cell containing point
 		var X = Math.floor(x),
@@ -575,6 +594,15 @@ export class Noise {
 		);
 	}
 
+	/**
+	 * Generate 3D Perlin Noise
+	 *
+	 * @param {*} x - The X value
+	 * @param {*} y - The Y value
+	 * @param {*} z - The Z value
+	 *
+	 * @returns {number} A noisy number from [-1...1]
+	 */
 	perlin3(x, y, z) {
 		// Find unit grid cell containing point
 		var X = Math.floor(x),

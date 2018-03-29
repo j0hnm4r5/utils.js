@@ -4,6 +4,7 @@
  * @see {@link https://stackoverflow.com/a/1484514}
  *
  * @param {string} [letters=0123456789ABCDEF] - The characters to randomly select from. This can be used to create primarily light or dark colors.
+ *
  * @returns {string} Hex color string
  */
 export function randomHexColor(letters = "0123456789ABCDEF") {
@@ -21,9 +22,9 @@ export function randomHexColor(letters = "0123456789ABCDEF") {
  *
  * @see {@link https://stackoverflow.com/a/17243070}
  *
- * @param {number} h - Hue [0..1] or {h: [0..1], s: [0..1], v: [0..1]}
- * @param {number} [s] - Saturation [0..1]
- * @param {number} [v] - Value [0..1]
+ * @param {number} h - Hue [0...1] or {h: [0...1], s: [0...1], v: [0...1]}
+ * @param {number} [s] - Saturation [0...1]
+ * @param {number} [v] - Value [0...1]
  *
  * @returns {object} An object containing the converted RGB values: {r: [0..255], g: [0..255], b: [0..255]}
  */
@@ -73,7 +74,7 @@ export function HSVtoRGB(h, s, v) {
  * @param {number} [g] - Green [0..255]
  * @param {number} [b] - Blue [0..255]
  *
- * @returns {object} An object containing the converted HSV values: {h: [0..1], s: [0..1], v: [0..1]}
+ * @returns {object} An object containing the converted HSV values: {h: [0...1], s: [0...1], v: [0...1]}
  */
 export function RGBtoHSV(r, g, b) {
 	if (arguments.length === 1) {
@@ -116,11 +117,11 @@ export function RGBtoHSV(r, g, b) {
  *
  * @see {@link https://stackoverflow.com/a/17243070}
  *
- * @param {number} h - Hue [0..1] or {h: [0..1], s: [0..1], v: [0..1]}
- * @param {number} [s] - Saturation [0..1]
- * @param {number} [v] - Value [0..1]
+ * @param {number} h - Hue [0...1] or {h: [0...1], s: [0...1], v: [0...1]}
+ * @param {number} [s] - Saturation [0...1]
+ * @param {number} [v] - Value [0...1]
  *
- * @returns {object} An object containing the converted HSL values: {h: [0..1], s: [0..1], l: [0..1]}
+ * @returns {object} An object containing the converted HSL values: {h: [0...1], s: [0...1], l: [0...1]}
  */
 export function HSVtoHSL(h, s, v) {
 	if (arguments.length === 1) {
@@ -144,11 +145,11 @@ export function HSVtoHSL(h, s, v) {
  *
  * @see {@link https://stackoverflow.com/a/17243070}
  *
- * @param {number} h - Hue [0..1] or {h: [0..1], s: [0..1], v: [0..1]}
- * @param {number} [s] - Saturation [0..1]
- * @param {number} [l] - Lightness [0..1]
+ * @param {number} h - Hue [0...1] or {h: [0...1], s: [0...1], v: [0...1]}
+ * @param {number} [s] - Saturation [0...1]
+ * @param {number} [l] - Lightness [0...1]
  *
- * @returns {object} An object containing the converted HSV values: {h: [0..1], s: [0..1], v: [0..1]}
+ * @returns {object} An object containing the converted HSV values: {h: [0...1], s: [0...1], v: [0...1]}
  */
 export function HSLtoHSV(h, s, l) {
 	if (arguments.length === 1) {
