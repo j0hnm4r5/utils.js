@@ -332,8 +332,8 @@ export class Noise {
 	/**
 	 * Generate 2D Simplex Noise
 	 *
-	 * @param {*} xin - The X value
-	 * @param {*} yin - The Y value
+	 * @param {*} xin - The X value. Should be somewhere between 0 and 1 for reasonable results.
+	 * @param {*} yin - The Y value. Should be somewhere between 0 and 1 for reasonable results.
 	 *
 	 * @returns {number} A noisy number from [-1...1]
 	 */
@@ -415,9 +415,9 @@ export class Noise {
 	/**
 	 * Generate 3D Simplex Noise
 	 *
-	 * @param {*} xin - The X value
-	 * @param {*} yin - The Y value
-	 * @param {*} zin - The Z value
+	 * @param {*} xin - The X value. Should be somewhere between 0 and 0.01 for reasonable results.
+	 * @param {*} yin - The Y value. Should be somewhere between 0 and 0.01 for reasonable results.
+	 * @param {*} zin - The Z value. Should be somewhere between 0 and 0.01 for reasonable results.
 	 *
 	 * @returns {number} A noisy number from [-1...1]
 	 */
@@ -559,8 +559,8 @@ export class Noise {
 	/**
 	 * Generate 2D Perlin Noise
 	 *
-	 * @param {*} x - The X value
-	 * @param {*} y - The Y value
+	 * @param {*} x - The X value. Should be somewhere between 0 and 0.1 for reasonable results.
+	 * @param {*} y - The Y value. Should be somewhere between 0 and 0.1 for reasonable results.
 	 *
 	 * @returns {number} A noisy number from [-1...1]
 	 */
@@ -597,9 +597,9 @@ export class Noise {
 	/**
 	 * Generate 3D Perlin Noise
 	 *
-	 * @param {*} x - The X value
-	 * @param {*} y - The Y value
-	 * @param {*} z - The Z value
+	 * @param {*} x - The X value. Should be somewhere between 0 and 0.1 for reasonable results.
+	 * @param {*} y - The Y value. Should be somewhere between 0 and 0.1 for reasonable results.
+	 * @param {*} z - The Z value. Should be somewhere between 0 and 0.1 for reasonable results.
 	 *
 	 * @returns {number} A noisy number from [-1...1]
 	 */
