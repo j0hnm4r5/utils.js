@@ -8,6 +8,16 @@
 
 A collection of Javascript utility functions.
 
+## Installation
+
+**Yarn** (preferred):
+
+`yarn add @j0hnm4r5/utils.js`
+
+or **NPM**:
+
+`npm install @j0hnm4r5/utils.js`
+
 ## Usage
 
 Either import the entire library:
@@ -20,7 +30,7 @@ new utils.Noise();
 utils.randomHexColor();
 ```
 
-Or import select functions:
+or import select functions:
 
 ```javascript
 import { convertRange, Noise, randomHexColor } from "@j0hnm4r5/utils.js";
@@ -36,6 +46,6 @@ randomHexColor();
 
 Run all tests at once with `yarn test`, develop your tests with `yarn test:watch`
 
-## TODO
+### TODO
 
 *   [ ] Add Documentation with JSDoc
