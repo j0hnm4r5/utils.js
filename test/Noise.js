@@ -2,7 +2,7 @@ import test from "ava";
 import { expect } from "chai";
 import chalk from "chalk";
 
-import * as utils from "../libs/Noise";
+import * as utils from "../libs/noise";
 
 var noise = new utils.Noise();
 

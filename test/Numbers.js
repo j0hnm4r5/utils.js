@@ -2,7 +2,7 @@ import test from "ava";
 import { expect } from "chai";
 import chalk from "chalk";
 
-import * as utils from "../libs/Numbers";
+import * as utils from "../libs/numbers";
 
 (function(val) {
 	test(`convertRange(5, 0, 10, 0, 100): ${chalk.blue(val)}`, () => {

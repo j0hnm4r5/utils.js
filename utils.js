@@ -4,6 +4,8 @@
  * Maintained by John Mars (john@M4R5.io)
  */
 
-export * from "./libs/Numbers";
-export * from "./libs/Noise";
-export * from "./libs/Colors";
+const Numbers = require("./libs/Numbers");
+const Noise = require("./libs/Noise");
+const Colors = require("./libs/Colors");
+
+module.exports = { Numbers, Noise, Colors };

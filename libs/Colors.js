@@ -3,11 +3,10 @@
  *
  * @see {@link https://stackoverflow.com/a/1484514}
  *
- * @param {string} [letters=0123456789ABCDEF] - The characters to randomly select from. This can be used to create primarily light or dark colors.
- *
  * @returns {string} Hex color string
  */
-export function randomHexColor(letters = "0123456789ABCDEF") {
+module.exports.randomHexColor = () => {
+	const letters = "0123456789ABCDEF";
 	let color = "#";
 
 	for (let i = 0; i < 6; i++) {
@@ -15,7 +14,7 @@ export function randomHexColor(letters = "0123456789ABCDEF") {
 	}
 
 	return color;
-}
+};
 
 /**
  * Converts a color from the HSV color space to the RGB color space
@@ -28,16 +27,19 @@ export function randomHexColor(letters = "0123456789ABCDEF") {
  *
  * @returns {object} An object containing the converted RGB values: {r: [0..255], g: [0..255], b: [0..255]}
  */
-export function HSVtoRGB(h, s, v) {
-	var r, g, b, i, f, p, q, t;
+module.exports.HSVtoRGB = (h, s, v) => {
 	if (arguments.length === 1) {
-		(s = h.s), (v = h.v), (h = h.h);
+		({ s } = h), ({ v } = h), ({ h } = h);
 	}
-	i = Math.floor(h * 6);
-	f = h * 6 - i;
-	p = v * (1 - s);
-	q = v * (1 - f * s);
-	t = v * (1 - (1 - f) * s);
+	const i = Math.floor(h * 6);
+	const f = h * 6 - i;
+	const p = v * (1 - s);
+	const q = v * (1 - f * s);
+	const t = v * (1 - (1 - f) * s);
+
+	let r;
+	let g;
+	let b;
 	switch (i % 6) {
 		case 0:
 			(r = v), (g = t), (b = p);
@@ -57,13 +59,15 @@ export function HSVtoRGB(h, s, v) {
 		case 5:
 			(r = v), (g = p), (b = q);
 			break;
+		default:
+			break;
 	}
 	return {
 		r: Math.round(r * 255),
 		g: Math.round(g * 255),
 		b: Math.round(b * 255),
 	};
-}
+};
 
 /**
  * Converts a color from the RGB color space to the HSV color space
@@ -76,11 +80,11 @@ export function HSVtoRGB(h, s, v) {
  *
  * @returns {object} An object containing the converted HSV values: {h: [0...1], s: [0...1], v: [0...1]}
  */
-export function RGBtoHSV(r, g, b) {
+module.exports.RGBtoHSV = (r, g, b) => {
 	if (arguments.length === 1) {
-		(g = r.g), (b = r.b), (r = r.r);
+		({ g } = r), ({ b } = r), ({ r } = r);
 	}
-	var max = Math.max(r, g, b),
+	let max = Math.max(r, g, b),
 		min = Math.min(r, g, b),
 		d = max - min,
 		h,
@@ -106,11 +110,11 @@ export function RGBtoHSV(r, g, b) {
 	}
 
 	return {
-		h: h,
-		s: s,
-		v: v,
+		h,
+		s,
+		v,
 	};
-}
+};
 
 /**
  * Converts a color from the HSV color space to the HSL color space
@@ -123,11 +127,11 @@ export function RGBtoHSV(r, g, b) {
  *
  * @returns {object} An object containing the converted HSL values: {h: [0...1], s: [0...1], l: [0...1]}
  */
-export function HSVtoHSL(h, s, v) {
+module.exports.HSVtoHSL = (h, s, v) => {
 	if (arguments.length === 1) {
 		(s = h.s), (v = h.v), (h = h.h);
 	}
-	var _h = h,
+	let _h = h,
 		_s = s * v,
 		_l = (2 - s) * v;
 	_s /= _l <= 1 ? _l : 2 - _l;
@@ -138,7 +142,7 @@ export function HSVtoHSL(h, s, v) {
 		s: _s,
 		l: _l,
 	};
-}
+};
 
 /**
  * Converts a color from the HSL color space to the HSV color space
@@ -151,11 +155,11 @@ export function HSVtoHSL(h, s, v) {
  *
  * @returns {object} An object containing the converted HSV values: {h: [0...1], s: [0...1], v: [0...1]}
  */
-export function HSLtoHSV(h, s, l) {
+module.exports.HSLtoHSV = (h, s, l) => {
 	if (arguments.length === 1) {
 		(s = h.s), (l = h.l), (h = h.h);
 	}
-	var _h = h,
+	let _h = h,
 		_s,
 		_v;
 
@@ -169,4 +173,4 @@ export function HSLtoHSV(h, s, l) {
 		s: _s,
 		v: _v,
 	};
-}
+};

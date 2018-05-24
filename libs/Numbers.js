@@ -9,20 +9,21 @@
  *
  * @returns {number} The converted value
  */
-export function convertRange(value, oldMin, oldMax, newMin = 0, newMax = 1) {
+// eslint-disable-next-line max-params
+module.exports.convertRange = (value, oldMin, oldMax, newMin = 0, newMax = 1) => {
 	return (value - oldMin) / (oldMax - oldMin) * (newMax - newMin) + newMin;
-}
+};
 
 /**
  * Get a random number from [0..<1]
  *
  * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random}
  *
- * @returns A random number from [0..<1]
+ * @returns {number} A random number from [0..<1]
  */
-export function getRandom() {
+module.exports.getRandom = () => {
 	return Math.random();
-}
+};
 
 /**
  * Get a random number from [min..<max]
@@ -32,11 +33,11 @@ export function getRandom() {
  * @param {number} min - Minimum value
  * @param {number} max - Maximum value
  *
- * @returns A random number from [min..<max]
+ * @returns {number} A random number from [min..<max]
  */
-export function getRandomArbitrary(min, max) {
+module.exports.getRandomArbitrary = (min, max) => {
 	return Math.random() * (max - min) + min;
-}
+};
 
 /**
  * Get a random integer from [min..<max]
@@ -46,13 +47,13 @@ export function getRandomArbitrary(min, max) {
  * @param {number} min - Minimum value
  * @param {number} max - Maximum value
  *
- * @returns A random integer from [min..<max]
+ * @returns {number} A random integer from [min..<max]
  */
-export function getRandomInt(min, max) {
+module.exports.getRandomInt = (min, max) => {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
 /**
  * Get a random integer from [min...max]
@@ -62,10 +63,10 @@ export function getRandomInt(min, max) {
  * @param {number} min - Minimum value
  * @param {number} max - Maximum value
  *
- * @returns A random integer from [min...max]
+ * @returns {number} A random integer from [min...max]
  */
-export function getRandomIntInclusive(min, max) {
+module.exports.getRandomIntInclusive = (min, max) => {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
