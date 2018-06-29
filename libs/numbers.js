@@ -2,16 +2,27 @@
  * Converts a value from one range to another
  *
  * @param {number} value - Original value to convert
- * @param {number} oldMin - Minimum value in the original value's range
- * @param {number} oldMax - Maximum value in the original value's range
- * @param {number} [newMin=0] - Minimum value in the converted value's range
- * @param {number} [newMax=1] - Maximum value in the converted value's range
+ * @param {number} fromMin - Minimum value in the original value's range
+ * @param {number} fromMax - Maximum value in the original value's range
+ * @param {number} [toMin=0] - Minimum value in the converted value's range
+ * @param {number} [toMax=1] - Maximum value in the converted value's range
  *
  * @returns {number} The converted value
  */
 // eslint-disable-next-line max-params
-module.exports.convertRange = (value, oldMin, oldMax, newMin = 0, newMax = 1) => {
-	return (value - oldMin) / (oldMax - oldMin) * (newMax - newMin) + newMin;
+module.exports.convertRange = (value, fromMin, fromMax, toMin = 0, toMax = 1) => {
+	return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
+};
+
+/**
+ * Clamps a number between a min and a max
+ *
+ * @param {number} value - The value to clamp between min and max
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value
+ */
+module.exports.clamp = (value, min, max) => {
+	return value <= min ? min : value >= max ? max : value;
 };
 
 /**
